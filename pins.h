@@ -2826,14 +2826,14 @@ DaveX plan for Teensylu/printrboard-type pinouts (ref teensylu & sprinter) for a
  #define Y_STEP_PIN         60
  #define Y_DIR_PIN          61
  #define Y_ENABLE_PIN       56
- #define Y_MIN_PIN          14
+ #define Y_MIN_PIN          19  // was 14, but swapped with Z-Max after original pin got fried
  #define Y_MAX_PIN          15
  
  #define Z_STEP_PIN         46
  #define Z_DIR_PIN          48
  #define Z_ENABLE_PIN       62
  #define Z_MIN_PIN          18
- #define Z_MAX_PIN          19
+ #define Z_MAX_PIN          14  // was 19, but swapped with Y-min after Y-min got fried
 
  #define Z2_STEP_PIN        36
  #define Z2_DIR_PIN         34
@@ -2851,7 +2851,7 @@ DaveX plan for Teensylu/printrboard-type pinouts (ref teensylu & sprinter) for a
  #define SDSS               53
  #define LED_PIN            13
  
- #define FAN_PIN            8 //11 // IO pin. Buffer needed
+ #define FAN_PIN            11 //8 // IO pin. Buffer needed
 
  #define PS_ON_PIN          -1
 

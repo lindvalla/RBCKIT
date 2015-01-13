@@ -5,7 +5,7 @@
 // Advanced settings can be found in Configuration_adv.h
 // BASIC SETTINGS: select your board type, temperature sensor type, axis scaling, and endstop configuration
 
-#define RIGIDBOT_SIZE 2 
+#define RIGIDBOT_SIZE 1
 
 //===========================================================================
 //============================= DELTA Printer ===============================
@@ -143,8 +143,8 @@
 // 147 is Pt100 with 4k7 pullup
 // 110 is Pt100 with 1k pullup (non standard)
 
-#define TEMP_SENSOR_0 1
-#define TEMP_SENSOR_1 1
+#define TEMP_SENSOR_0 5
+#define TEMP_SENSOR_1 5
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_BED 1
 
@@ -213,9 +213,9 @@
 //    #define  DEFAULT_Kd 440
 
 // RigidBot redesigned hot end
-    #define  DEFAULT_Kp 14.36
-    #define  DEFAULT_Ki 0.66
-    #define  DEFAULT_Kd 79.25
+    #define  DEFAULT_Kp 10
+    #define  DEFAULT_Ki 1.07
+    #define  DEFAULT_Kd 260
 #endif // PIDTEMP
 
 // Bed Temperature Control
@@ -365,7 +365,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define DISABLE_INACTIVE_EXTRUDER true //disable only inactive extruders and keep active extruder enabled
 
 #define INVERT_X_DIR true    // for Mendel set to false, for Orca set to true
-#define INVERT_Y_DIR false    // for Mendel set to true, for Orca set to false
+#define INVERT_Y_DIR true    // for Mendel set to true, for Orca set to false
 #define INVERT_Z_DIR false     // for Mendel set to false, for Orca set to true
 #define INVERT_E0_DIR true   // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E1_DIR true    // for direct drive extruder v9 set to true, for geared extruder set to false
@@ -425,8 +425,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define HOMING_FEEDRATE {50*60, 50*60, 15*60, 0}  // set the homing speeds (mm/min)
 
 // default settings
-
-#define DEFAULT_AXIS_STEPS_PER_UNIT  {99.06,49.53,1600,54.84}  // default steps per unit for Ultimaker {44.3090,22.1545,1600,53.5}  // default steps per unit for Ultimaker
+X80.14 Y40.07 Z1585.00
+#define DEFAULT_AXIS_STEPS_PER_UNIT  {80.14,40.07,1585,50.00}  // default steps per unit for Ultimaker {44.3090,22.1545,1600,53.5}  // default steps per unit for Ultimaker
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 4, 25}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {800,600,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
