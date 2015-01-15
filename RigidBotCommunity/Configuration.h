@@ -213,9 +213,9 @@
 //    #define  DEFAULT_Kd 440
 
 // RigidBot redesigned hot end
-    #define  DEFAULT_Kp 10
-    #define  DEFAULT_Ki 1.07
-    #define  DEFAULT_Kd 260
+    #define  DEFAULT_Kp 49.28  //10
+    #define  DEFAULT_Ki 5.61   //1.07
+    #define  DEFAULT_Kd 108.19 //260
 #endif // PIDTEMP
 
 // Bed Temperature Control
