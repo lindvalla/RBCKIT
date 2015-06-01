@@ -213,9 +213,9 @@
 //    #define  DEFAULT_Kd 440
 
 // RigidBot redesigned hot end
-    #define  DEFAULT_Kp 49.28  //10
-    #define  DEFAULT_Ki 5.61   //1.07
-    #define  DEFAULT_Kd 108.19 //260
+    #define  DEFAULT_Kp 18.55
+    #define  DEFAULT_Ki  1.47
+    #define  DEFAULT_Kd 58.62
 #endif // PIDTEMP
 
 // Bed Temperature Control
@@ -391,14 +391,14 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #if EXTRUDERS == 1
   #define X_DUAL_REDUCTION 0
 #elif EXTRUDERS == 2
-  #define X_DUAL_REDUCTION 57
+  #define X_DUAL_REDUCTION 32 //57 for original plate, 32 after Peter S upgrade
 #else
   #define X_DUAL_REDUCTION 350 // Prevent head crashes if EXTRUDERS > 2
 #endif
 
 #if RIGIDBOT_SIZE == 1 // 10x10 Regular
   #define X_MAX_POS (254 - X_DUAL_REDUCTION)
-  #define Y_MAX_POS 248
+  #define Y_MAX_POS 240
   #define Z_MAX_POS 254
 #elif RIGIDBOT_SIZE == 2 // 12x16 Big
   #define X_MAX_POS (406 - X_DUAL_REDUCTION)
@@ -425,9 +425,9 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define HOMING_FEEDRATE {50*60, 50*60, 15*60, 0}  // set the homing speeds (mm/min)
 
 // default settings
-#define DEFAULT_AXIS_STEPS_PER_UNIT  {80.14,40.07,1585,48.10}  // default steps per unit for Ultimaker {44.3090,22.1545,1600,53.5}  // default steps per unit for Ultimaker
+#define DEFAULT_AXIS_STEPS_PER_UNIT  {80.14,40.07,1585,67.99}  // default steps per unit for Ultimaker {44.3090,22.1545,1600,53.5}  // default steps per unit for Ultimaker
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 4, 25}    // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {800,600,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_ACCELERATION      {800,600,100,8000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for Skeinforge 40+, for older versions raise them a lot.
 
 #define DEFAULT_ACCELERATION          600    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
 #define DEFAULT_RETRACT_ACCELERATION  1000   // X, Y, Z and E max acceleration in mm/s^2 for retracts
@@ -477,10 +477,10 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
   #ifdef AUTO_BED_LEVELING_GRID
 
     // set the rectangle in which to probe
-    #define LEFT_PROBE_BED_POSITION  0//15
-    #define RIGHT_PROBE_BED_POSITION 190//170
-    #define BACK_PROBE_BED_POSITION 190//240
-    #define FRONT_PROBE_BED_POSITION 10
+    #define LEFT_PROBE_BED_POSITION   20
+    #define RIGHT_PROBE_BED_POSITION 190
+    #define BACK_PROBE_BED_POSITION  190
+    #define FRONT_PROBE_BED_POSITION  10
 
      // set the number of grid points per dimension
      // I wouldn't see a reason to go above 3 (=9 probing points on the bed)
@@ -502,17 +502,17 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 
   // these are the offsets to the probe relative to the extruder tip (Hotend - Probe)
-  #define X_PROBE_OFFSET_FROM_EXTRUDER 3 //-25
-  #define Y_PROBE_OFFSET_FROM_EXTRUDER -33//-29
-  #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.3//-12.35
+  #define X_PROBE_OFFSET_FROM_EXTRUDER 50
+  #define Y_PROBE_OFFSET_FROM_EXTRUDER 52
+  #define Z_PROBE_OFFSET_FROM_EXTRUDER -0.5
 
   #define Z_RAISE_BEFORE_HOMING 4       // (in mm) Raise Z before homing (G28) for Probe Clearance.
                                         // Be sure you have this distance over your Z_MAX_POS in case
 
   #define XY_TRAVEL_SPEED 8000         // X and Y axis travel speed between probes, in mm/min
 
-  #define Z_RAISE_BEFORE_PROBING 5//15    //How much the extruder will be raised before traveling to the first probing point.
-  #define Z_RAISE_BETWEEN_PROBINGS 2//5  //How much the extruder will be raised when traveling from between next probing points
+  #define Z_RAISE_BEFORE_PROBING   5   //How much the extruder will be raised before traveling to the first probing point.
+  #define Z_RAISE_BETWEEN_PROBINGS 5   //How much the extruder will be raised when traveling from between next probing points
 
   //#define Z_PROBE_SLED // turn on if you have a z-probe mounted on a sled like those designed by Charles Bell
   //#define SLED_DOCKING_OFFSET 5 // the extra distance the X axis must travel to pickup the sled. 0 should be fine but you can push it further if you'd like.
